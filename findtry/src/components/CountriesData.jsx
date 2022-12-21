@@ -1,18 +1,18 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
-import { searchContext } from '../hooks/SearchContext';
+import { searchingContext } from '../hooks/SearchContext';
 
 const CountriesData = ({ currentCountriesData, filteredData }) => {
 
-    const search = useContext(searchContext);
+    const isSearching = useContext(searchingContext);
 
     return (
         <ul>
-            {search.searching == true &&
+            {isSearching.searching == true &&
                 filteredData.map(country => {
                     return (
-                        <li>
+                        <li key={country.cioc}>
                             <Link to={country.name.common.toLowerCase()}>
                                 {country.name.common}
                             </Link>
@@ -21,10 +21,10 @@ const CountriesData = ({ currentCountriesData, filteredData }) => {
 
                 })
             }
-            {search.searching == false &&
+            {isSearching.searching == false &&
                 currentCountriesData.map(country => {
                     return (
-                        <li>
+                        <li key={country.cioc}>
                             <Link to={country.name.common.toLowerCase()}>
                                 {country.name.common}
                             </Link>

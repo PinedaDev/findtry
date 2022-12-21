@@ -1,3 +1,4 @@
 import { createContext } from "react";
 
-export const searchContext = createContext(null)
+export const searchingContext = createContext(null)
+export const searchValueContext = createContext("")

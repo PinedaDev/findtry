@@ -1,33 +1,33 @@
 import React from 'react'
-import { useEffect, useContext, useRef } from 'react';
-import { searchContext } from '../hooks/SearchContext'
+import { useEffect, useContext } from 'react';
+import { searchingContext, searchValueContext } from '../hooks/SearchContext'
 
-const SearchField = ({ searchValue, setSearchValue }) => {
+const SearchField = () => {
 
-    const search = useContext(searchContext);
-    const searchFiel = useRef()
+    const isSearching = useContext(searchingContext);
+    const valueContext = useContext(searchValueContext)
 
     const changeSearchState = () => {
-        if (!search.searching) {
-            search.setSearching(true)
+        if (!isSearching.searching) {
+            isSearching.setSearching(true)
         }
-        search.setSearching(!search.searching)
+        isSearching.setSearching(!isSearching.searching)
     }
 
     useEffect(() => {
-        if (searchValue != "") {
-            if (search.searching !== true) {
+        if (valueContext.searchValue != "") {
+            if (isSearching.searching !== true) {
                 changeSearchState()
                 return
             }
             return
         }
-        search.setSearching(false)
-    }, [searchValue])
+        isSearching.setSearching(false)
+    }, [valueContext.searchValue])
 
     return (
         <>
-            <input ref={searchFiel} value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="search" />
+            <input value={valueContext.searchValue} onChange={(e) => valueContext.setSearchValue(e.target.value)} type="search" />
         </>
     )
 }

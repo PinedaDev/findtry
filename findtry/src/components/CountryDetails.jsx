@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react';
-import { useLocation, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import axios from 'axios';
 import { useState } from 'react';
 
@@ -24,20 +24,26 @@ const CountryDetails = () => {
 
     const showDetails = (details) => {
         if (details !== undefined) {
-            console.log(details)
+            const flag = details.flags.png
+            console.log(countryDetails)
             return (
-                <div>
-                    <ul>
-                        <li>
-                            {details.name.common}
-                        </li>
-                        <li>
-                            {details.name.official}
-                        </li>
-                        <li>
-                            <a target="_blank" href={details.maps.googleMaps}>Show map</a>
-                        </li>
-                    </ul>
+                <div className='country-details-card'>
+                    <h1>
+                        {
+                            details.name.common
+                        }
+                    </h1>
+                    <div className='text-info'>
+                        <img src={flag} alt={`flag of ${location}`} />
+                        <p>
+                            {details.name.official} is located in {details.region}.
+                            This country count with {details.population} habitants ,beeing their
+                            official or every day language
+                        </p>
+                    </div>
+                    <div>
+
+                    </div>
                 </div>
             )
         }

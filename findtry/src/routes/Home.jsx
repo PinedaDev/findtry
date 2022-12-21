@@ -1,25 +1,19 @@
 import axios from 'axios';
-import { useState, useEffect, useMemo } from 'react';
-import { searchContext } from '../hooks/SearchContext';
+import { useState, useEffect, useContext } from 'react';
 import CountriesData from '../components/CountriesData';
 import Pagination from '../components/Pagination';
-import SearchField from '../components/SearchField';
-import { Outlet } from 'react-router';
+import { searchValueContext } from '../hooks/SearchContext';
 
-const Home = (props) => {
+const Home = () => {
 
-    console.log(props.eevi)
     const [countriesData, setCountryData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage, setcountriesPerPage] = useState(5);
 
-    const [searching, setSearching] = useState(false);
-    const provideSearchState = useMemo(() => ({ searching, setSearching }), [searching, setSearching])
-    const [searchValue, setSearchValue] = useState("")
-
+    const valueContext = useContext(searchValueContext)
     const filteredCountriesData = countriesData.filter(country => {
-        return country.name.common.toLowerCase().includes(searchValue.toLowerCase())
+        return country.name.common.toLowerCase().includes(valueContext.searchValue.toLowerCase())
     })
 
     useEffect(() => {
@@ -47,17 +41,13 @@ const Home = (props) => {
     }
 
     return (
-        <searchContext.Provider value={provideSearchState}>
-            <div>
-                <h1>Findtry</h1>
-                <SearchField searchValue={searchValue} setSearchValue={setSearchValue} />
-                <CountriesData filteredData={filteredCountriesData} currentCountriesData={currentCountriesData} />
-                <Pagination
-                    handlePageClick={changePage}
-                    countriesPerPage={countriesPerPage}
-                    totalCountries={countriesData.length} />
-            </div>
-        </searchContext.Provider>
+        <div>
+            <CountriesData filteredData={filteredCountriesData} currentCountriesData={currentCountriesData} />
+            <Pagination
+                handlePageClick={changePage}
+                countriesPerPage={countriesPerPage}
+                totalCountries={countriesData.length} />
+        </div>
     );
 }
 
