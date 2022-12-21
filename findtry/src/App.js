@@ -16,7 +16,7 @@ function App() {
   const provideSearchState = useMemo(() => ({ searching, setSearching }), [searching, setSearching])
   const [searchValue, setSearchValue] = useState("")
 
-  const filteredCountries = countriesData.filter(country => {
+  const filteredCountriesData = countriesData.filter(country => {
     return country.name.common.toLowerCase().includes(searchValue.toLowerCase())
   })
 
@@ -49,7 +49,7 @@ function App() {
       <div>
         <h1>Findtry</h1>
         <SearchField searchValue={searchValue} setSearchValue={setSearchValue} />
-        <CountriesData countriesData={currentCountriesData} />
+        <CountriesData filteredData={filteredCountriesData} currentCountriesData={currentCountriesData} />
         <Pagination
           handlePageClick={changePage}
           countriesPerPage={countriesPerPage}

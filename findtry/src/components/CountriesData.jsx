@@ -1,14 +1,31 @@
 import React from 'react'
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { searchContext } from '../hooks/SearchContext';
 
-const CountriesData = ({ countriesData }) => {
+const CountriesData = ({ currentCountriesData, filteredData }) => {
+
+    const search = useContext(searchContext);
+
     return (
         <ul>
-            {countriesData.map(country => (
-                <li>
-                    {country.name.common}
-                </li>
-            ))
+            {search.searching == true &&
+                filteredData.map(country => {
+                    return (
+                        <li>
+                            {country.name.common}
+                        </li>
+                    )
+
+                })
+            }
+            {search.searching == false &&
+                currentCountriesData.map(country => {
+                    return (
+                        <li>
+                            {country.name.common}
+                        </li>
+                    )
+                })
             }
         </ul>
     )
