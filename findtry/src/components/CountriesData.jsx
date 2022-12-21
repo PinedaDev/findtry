@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { searchContext } from '../hooks/SearchContext';
 
@@ -12,7 +13,9 @@ const CountriesData = ({ currentCountriesData, filteredData }) => {
                 filteredData.map(country => {
                     return (
                         <li>
-                            {country.name.common}
+                            <Link to={country.name.common.toLowerCase()}>
+                                {country.name.common}
+                            </Link>
                         </li>
                     )
 
@@ -22,7 +25,9 @@ const CountriesData = ({ currentCountriesData, filteredData }) => {
                 currentCountriesData.map(country => {
                     return (
                         <li>
-                            {country.name.common}
+                            <Link to={country.name.common.toLowerCase()}>
+                                {country.name.common}
+                            </Link>
                         </li>
                     )
                 })

@@ -6,8 +6,9 @@ import Pagination from '../components/Pagination';
 import SearchField from '../components/SearchField';
 import { Outlet } from 'react-router';
 
-const Home = () => {
+const Home = (props) => {
 
+    console.log(props.eevi)
     const [countriesData, setCountryData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
