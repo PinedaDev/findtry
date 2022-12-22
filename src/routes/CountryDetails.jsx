@@ -54,7 +54,7 @@ const CountryDetails = () => {
                         <img src={flag} alt={`flag of ${location}`} />
                         <p>
                             {details.name.official} is located in the continent of {details.region}.
-                            This country counts with {details.population} habitants ,
+                            This country counts with {details.population} habitants,
                             distributed around an area of {details.area} km<sup>2</sup>.
                             The capital city is {details.capital}.
                         </p>
