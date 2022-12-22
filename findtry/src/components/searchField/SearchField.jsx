@@ -3,6 +3,7 @@ import { mdiMapSearch } from '@mdi/js'
 import Icon from '@mdi/react';
 import { useEffect, useContext } from 'react';
 import { searchingContext, searchValueContext } from '../../hooks/SearchContext'
+import './style/component.css'
 
 const SearchField = () => {
 
@@ -17,7 +18,7 @@ const SearchField = () => {
     }
 
     useEffect(() => {
-        if (valueContext.searchValue != "") {
+        if (valueContext.searchValue !== "") {
             if (isSearching.searching !== true) {
                 changeSearchState()
                 return
@@ -28,16 +29,15 @@ const SearchField = () => {
     }, [valueContext.searchValue])
 
     return (
-        <>
-            <div>
-                <input placeholder='search a country' value={valueContext.searchValue} onChange={(e) => valueContext.setSearchValue(e.target.value)} type="search" />
+        <div className='search-field'>
+            <input placeholder='search a country' value={valueContext.searchValue} onChange={(e) => valueContext.setSearchValue(e.target.value)} type="search" />
+            {valueContext.searchValue === "" &&
                 <Icon
                     path={mdiMapSearch}
-                    color="#570A57"
+                    color="#A91079"
                     size={1}>
-                </Icon>
-            </div>
-        </>
+                </Icon>}
+        </div>
     )
 }
 

@@ -5,7 +5,7 @@
     padding: 1rem;
 }
 
-a {
+.top-bar a {
     display: flex;
     align-items: center;
     font-size: 2rem;

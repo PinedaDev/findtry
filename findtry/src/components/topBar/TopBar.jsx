@@ -2,6 +2,7 @@ import React from 'react'
 import SearchField from '../searchField/SearchField'
 import Icon from '@mdi/react'
 import { mdiEarth } from '@mdi/js'
+import { mdiHome } from '@mdi/js'
 import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 import './style/component.css'
@@ -27,7 +28,13 @@ const TopBar = () => {
                 <SearchField />
             }
             {location.pathname !== "/" &&
-                <Link to="/">bact to home</Link>
+                <Link to="/">
+                    <Icon
+                        path={mdiHome}
+                        size={1}
+                        color="#A91079">
+                    </Icon>
+                </Link>
             }
 
         </div>
