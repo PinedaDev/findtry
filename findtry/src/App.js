@@ -3,6 +3,7 @@ import { Outlet } from 'react-router';
 import { searchingContext } from './hooks/SearchContext';
 import { searchValueContext } from './hooks/SearchContext';
 import TopBar from './components/topBar/TopBar';
+import './styles/main.css'
 const App = () => {
 
   const [searching, setSearching] = useState(false);
@@ -16,6 +17,7 @@ const App = () => {
       <searchValueContext.Provider value={privideSearchValueContext}>
         <div className='main-container'>
           <TopBar />
+          <hr />
           <Outlet />
         </div>
       </searchValueContext.Provider>

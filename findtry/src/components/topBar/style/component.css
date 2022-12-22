@@ -1,0 +1,13 @@
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+}

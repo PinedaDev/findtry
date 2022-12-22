@@ -2,10 +2,9 @@ import React from 'react'
 import SearchField from '../searchField/SearchField'
 import Icon from '@mdi/react'
 import { mdiEarth } from '@mdi/js'
-import { useContext } from 'react'
-import { searchingContext } from '../../hooks/SearchContext'
-import { useLocation, useParams } from 'react-router'
+import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
+import './style/component.css'
 
 const TopBar = () => {
 
@@ -13,12 +12,16 @@ const TopBar = () => {
 
     return (
         <div className='top-bar'>
-            <Link to="/">
+            <Link className='logo' to="/">
                 <Icon
                     path={mdiEarth}
                     title="logo icon"
+                    color="#A91079"
                     size={1}
-                ></Icon>Findtry
+                ></Icon>
+                <span className='white-color'>
+                    Findtry
+                </span>
             </Link>
             {location.pathname === "/" &&
                 <SearchField />

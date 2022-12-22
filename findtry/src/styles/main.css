@@ -1,5 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.main-container {
+    background-image: url(../assets/imgs/bg.png);
+    background-position: center;
+    background-size: cover;
+    font-family: 'Caveat', cursive;
+    color: #ffff;
+    min-height: 100vh;
+}
+
+hr {
+    width: 95%;
+    margin: 1rem auto;
+}
+
+.main-color {
+    color: #570A57;
+}
+
+.secondary.color {
+    color: #A91079;
+}
+
+.accent-color {
+    color: #F806CC;
+}
+
+.white-color {
+    color: #ffff;
 }

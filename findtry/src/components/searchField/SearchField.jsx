@@ -1,4 +1,6 @@
 import React from 'react'
+import { mdiMapSearch } from '@mdi/js'
+import Icon from '@mdi/react';
 import { useEffect, useContext } from 'react';
 import { searchingContext, searchValueContext } from '../../hooks/SearchContext'
 
@@ -27,7 +29,14 @@ const SearchField = () => {
 
     return (
         <>
-            <input value={valueContext.searchValue} onChange={(e) => valueContext.setSearchValue(e.target.value)} type="search" />
+            <div>
+                <input placeholder='search a country' value={valueContext.searchValue} onChange={(e) => valueContext.setSearchValue(e.target.value)} type="search" />
+                <Icon
+                    path={mdiMapSearch}
+                    color="#570A57"
+                    size={1}>
+                </Icon>
+            </div>
         </>
     )
 }
