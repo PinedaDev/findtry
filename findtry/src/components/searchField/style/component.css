@@ -28,7 +28,7 @@
 
 @media screen and (min-width: 1024px) {
     .search-field {
-        margin-right: 4rem;
+        margin-right: 6rem;
     }
 
     .search-field input[type="search"] {

@@ -34,7 +34,7 @@ const SearchField = () => {
             {valueContext.searchValue === "" &&
                 <Icon
                     path={mdiMapSearch}
-                    color="#A91079"
+                    color="#234691"
                     size={1}>
                 </Icon>}
         </div>

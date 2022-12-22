@@ -12,11 +12,13 @@ const Pagination = ({ countriesPerPage, totalCountries, handlePageClick }) => {
             nextLabel="next"
             onPageChange={handlePageClick}
             pageRangeDisplayed={3}
+            breakClassName="brake-dots"
             pageCount={pageCount}
             previousLabel="previous"
             renderOnZeroPageCount={null}
             containerClassName="pagination-container"
             activeClassName="active-page"
+            activeLinkClassName="active-page"
             previousLinkClassName="previous-btn"
             nextLinkClassName="next-btn"
             pageLinkClassName="page-link"

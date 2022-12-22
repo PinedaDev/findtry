@@ -24,6 +24,11 @@
     transition: .3s;
 }
 
+.page-link {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
 .previous-btn:hover,
 .next-btn:hover,
 .page-link:hover {
@@ -37,6 +42,11 @@
 
 .active-page {
     color: var(--accent-color);
+}
+
+.brake-dots {
+    font-size: 1.5rem;
+    color: var(--main-color);
 }
 
 @media screen and (min-width: 1024px) {

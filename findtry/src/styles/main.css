@@ -7,14 +7,18 @@
 }
 
 :root {
-    --main-color: #570A57;
-    --secondary-color: #A91079;
-    --accent-color: #F806CC;
-    --white-color: #ffff;
+    --main-color: #234691;
+    --secondary-color: #4B56D2;
+    --accent-color: #82C3EC;
+    --white-color: #F1F6F5;
 }
 
+/* --main-color: #570A57;
+--secondary-color: #A91079;
+--accent-color: #F806CC;
+--white-color: #ffff; */
 .main-container {
-    background-image: url(../assets/imgs/bg.png);
+    background-image: url(../assets/imgs/light-bg.png);
     background-position: center;
     background-size: cover;
     font-family: 'Caveat', cursive;
@@ -37,15 +41,15 @@ hr {
 }
 
 .main-color {
-    color: #570A57;
+    color: var(--main-color);
 }
 
 .secondary.color {
-    color: #A91079;
+    color: var(--secondary-color);
 }
 
 .accent-color {
-    color: #F806CC;
+    color: var(--accent-color);
 }
 
 .white-color {

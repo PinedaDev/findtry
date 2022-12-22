@@ -17,6 +17,10 @@
         font-size: 3rem;
     }
 
+    .top-bar .logo {
+        margin-left: 5rem;
+    }
+
     .top-bar .logo svg {
         transform: scale(1.5);
     }
