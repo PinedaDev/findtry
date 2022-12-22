@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import CountriesData from '../components/countriesData/CountriesData';
 import Pagination from '../components/pagination/Pagination';
 import { searchingContext, searchValueContext } from '../hooks/SearchContext';
+import '../styles/routesStyle/home.css'
 
 const Home = () => {
 
@@ -42,6 +43,14 @@ const Home = () => {
 
     return (
         <div>
+            <div className='categories-div'>
+                <ul>
+                    <li>Flag</li>
+                    <li>Name</li>
+                    <li>Region</li>
+                    <li>Population</li>
+                </ul>
+            </div>
             <CountriesData filteredData={filteredCountriesData} currentCountriesData={currentCountriesData} />
             {searchContex.searching === false &&
                 <Pagination

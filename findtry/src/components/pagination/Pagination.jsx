@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactPaginate from 'react-paginate';
+import './style/component.css'
 
 const Pagination = ({ countriesPerPage, totalCountries, handlePageClick }) => {
 
@@ -8,12 +9,18 @@ const Pagination = ({ countriesPerPage, totalCountries, handlePageClick }) => {
     return (
         <ReactPaginate
             breakLabel="..."
-            nextLabel="next >"
+            nextLabel="next"
             onPageChange={handlePageClick}
             pageRangeDisplayed={3}
             pageCount={pageCount}
-            previousLabel="< previous"
+            previousLabel="previous"
             renderOnZeroPageCount={null}
+            containerClassName="pagination-container"
+            activeClassName="active-page"
+            previousLinkClassName="previous-btn"
+            nextLinkClassName="next-btn"
+            pageLinkClassName="page-link"
+            disabledLinkClassName="disabled-btn"
         />
     )
 }

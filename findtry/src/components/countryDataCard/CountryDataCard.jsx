@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Icon from '@mdi/react'
 import { mdiPlusCircle } from '@mdi/js'
+import './style/component.css'
 
 const CountryDataCard = ({ countryData }) => {
     const flag = countryData.flags.png

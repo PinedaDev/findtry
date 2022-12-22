@@ -6,19 +6,29 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-color: #570A57;
+    --secondary-color: #A91079;
+    --accent-color: #F806CC;
+    --white-color: #ffff;
+}
+
 .main-container {
     background-image: url(../assets/imgs/bg.png);
     background-position: center;
     background-size: cover;
     font-family: 'Caveat', cursive;
     color: #ffff;
-    min-height: 100vh;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
-@media screen and (min-width:1024px) {
-    .main-container {
-        height: 100vh;
-    }
+.division {
+    width: 90%;
+    margin: auto;
+    height: 3px;
+    background-color: var(--main-color);
+    margin-bottom: 1rem;
 }
 
 hr {

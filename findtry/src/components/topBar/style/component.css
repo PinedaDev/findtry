@@ -11,3 +11,13 @@
     font-size: 2rem;
     text-decoration: none;
 }
+
+@media screen and (min-width:1024px) {
+    .top-bar a>span {
+        font-size: 3rem;
+    }
+
+    .top-bar .logo svg {
+        transform: scale(1.5);
+    }
+}

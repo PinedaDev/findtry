@@ -17,7 +17,7 @@ const App = () => {
       <searchValueContext.Provider value={privideSearchValueContext}>
         <div className='main-container'>
           <TopBar />
-          <hr />
+          <div className='division'></div>
           <Outlet />
         </div>
       </searchValueContext.Provider>

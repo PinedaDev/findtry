@@ -1,0 +1,23 @@
+.categories-div ul {
+    display: flex;
+    width: 95%;
+    list-style-type: none;
+    font-size: 1rem;
+    justify-content: space-around;
+}
+
+.categories-div li {
+    text-align: center;
+    color: var(--main-color);
+}
+
+
+@media screen and (min-width:1024px) {
+    .categories-div ul {
+        width: 60%;
+        justify-content: space-around;
+        font-size: 2rem;
+        margin: auto;
+        transform: translateX(-16%);
+    }
+}

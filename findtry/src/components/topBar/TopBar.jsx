@@ -17,7 +17,7 @@ const TopBar = () => {
                 <Icon
                     path={mdiEarth}
                     title="logo icon"
-                    color="#A91079"
+                    color="#570A57"
                     size={1}
                 ></Icon>
                 <span className='white-color'>
@@ -31,8 +31,9 @@ const TopBar = () => {
                 <Link to="/">
                     <Icon
                         path={mdiHome}
-                        size={1}
-                        color="#A91079">
+                        size={2}
+                        color="#570A57">
+
                     </Icon>
                 </Link>
             }

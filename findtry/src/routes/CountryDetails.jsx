@@ -1,8 +1,13 @@
-import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+
 import axios from 'axios';
-import { useState } from 'react';
+import Loading from '../components/loading/Loading';
+
+import Icon from '@mdi/react'
+import { mdiMapMarker } from '@mdi/js'
+
+import '../styles/routesStyle/countryDetails.css'
 
 const CountryDetails = () => {
     const location = useParams();
@@ -44,21 +49,27 @@ const CountryDetails = () => {
                             details.name.common
                         }
                     </h1>
+                    <div className='divisor' />
                     <div className='text-info'>
                         <img src={flag} alt={`flag of ${location}`} />
                         <p>
-                            {details.name.official} is located in the {details.region}.
+                            {details.name.official} is located in the continent of {details.region}.
                             This country counts with {details.population} habitants ,
                             distributed around an area of {details.area} km<sup>2</sup>.
-                            The capital city is {details.capital}
+                            The capital city is {details.capital}.
                         </p>
                     </div>
+                    <div className='divisor' />
                     <div className='sub-details-grid'>
                         <div className='sub-details-container'>
-                            <span>
+                            <span className='head-text'>
                                 Show on the map:
                             </span>
                             <a target="_blank" href={details.maps.googleMaps}>
+                                <Icon
+                                    path={mdiMapMarker}
+                                    size={1}>
+                                </Icon>
                                 {details.name.common}
                             </a>
                         </div>
@@ -106,9 +117,7 @@ const CountryDetails = () => {
             )
         }
         return (
-            <span>
-                Loading
-            </span>
+            <Loading />
         )
     }
 
