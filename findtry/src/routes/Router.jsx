@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import App from "../App";
 import Home from '../routes/Home'
-import CountryDetails from "../components/CountryDetails";
+import CountryDetails from "./CountryDetails";
 
 const Router = createBrowserRouter(
     createRoutesFromElements(

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useContext } from 'react';
-import { searchingContext, searchValueContext } from '../hooks/SearchContext'
+import { searchingContext, searchValueContext } from '../../hooks/SearchContext'
 
 const SearchField = () => {
 

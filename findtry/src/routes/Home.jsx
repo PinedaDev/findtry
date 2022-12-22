@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect, useContext } from 'react';
-import CountriesData from '../components/CountriesData';
-import Pagination from '../components/Pagination';
-import { searchValueContext } from '../hooks/SearchContext';
+import CountriesData from '../components/countriesData/CountriesData';
+import Pagination from '../components/pagination/Pagination';
+import { searchingContext, searchValueContext } from '../hooks/SearchContext';
 
 const Home = () => {
 
@@ -12,6 +12,7 @@ const Home = () => {
     const [countriesPerPage, setcountriesPerPage] = useState(5);
 
     const valueContext = useContext(searchValueContext)
+    const searchContex = useContext(searchingContext)
     const filteredCountriesData = countriesData.filter(country => {
         return country.name.common.toLowerCase().includes(valueContext.searchValue.toLowerCase())
     })
@@ -43,10 +44,11 @@ const Home = () => {
     return (
         <div>
             <CountriesData filteredData={filteredCountriesData} currentCountriesData={currentCountriesData} />
-            <Pagination
-                handlePageClick={changePage}
-                countriesPerPage={countriesPerPage}
-                totalCountries={countriesData.length} />
+            {searchContex.searching === false &&
+                <Pagination
+                    handlePageClick={changePage}
+                    countriesPerPage={countriesPerPage}
+                    totalCountries={countriesData.length} />}
         </div>
     );
 }
