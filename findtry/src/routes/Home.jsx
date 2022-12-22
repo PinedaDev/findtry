@@ -37,7 +37,6 @@ const Home = () => {
 
     const changePage = (event) => {
         const newPage = (event.selected % countriesData.length) + 1;
-        console.log(`User requested page ${newPage}`)
         setCurrentPage(newPage);
     }
 

@@ -37,8 +37,6 @@ const CountryDetails = () => {
             for (const [key, value] of Object.entries(currencies)) {
                 currencyList.push(value)
             }
-
-            console.log(details)
             return (
                 <div className='country-details-card'>
                     <h1>
