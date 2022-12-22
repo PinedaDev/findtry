@@ -14,7 +14,7 @@ const ErrorBoundary = () => {
     // Uncaught ReferenceError: path is not defined
     return (
         <>
-            <App></App>
+            <div>Dang!</div>
         </>
     );
 }
