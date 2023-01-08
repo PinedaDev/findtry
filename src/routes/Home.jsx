@@ -14,20 +14,19 @@ const Home = () => {
 
     const valueContext = useContext(searchValueContext)
     const searchContex = useContext(searchingContext)
-    const filteredCountriesData = countriesData.filter(country => {
-        return country.name.common.toLowerCase().includes(valueContext.searchValue.toLowerCase())
-    })
+    const filteredCountriesData = countriesData.filter(country =>
+        country.name.common.toLowerCase().includes(valueContext.searchValue.toLowerCase()))
 
     useEffect(() => {
         const fetchCountriesData = async () => {
             setLoading(true);
             const res = await axios.get('https://restcountries.com/v3.1/all');
-            let sortedData = res.data.sort(function (a, b) {
-                if (a.name.common.toLowerCase() < b.name.common.toLowerCase()
+            let sortedData = res.data.sort((country1, country2) => {
+                if (country1.name.common.toLowerCase() < country2.name.common.toLowerCase()
                 ) return -1;
-                if (a.name.common.toLowerCase() > b.name.common.toLowerCase()
-                ) return 1;
-                return 0;
+                else {
+                    return 1;
+                }
             })
             setCountriesData(sortedData);
             setLoading(false);
