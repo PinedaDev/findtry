@@ -4,15 +4,15 @@ import { useParams } from 'react-router';
 import axios from 'axios';
 import Loading from '../components/loading/Loading';
 
-import Icon from '@mdi/react'
-import { mdiMapMarker } from '@mdi/js'
+import Icon from '@mdi/react';
+import { mdiMapMarker } from '@mdi/js';
 
-import '../styles/routesStyle/countryDetails.css'
+import '../styles/routesStyle/countryDetails.css';
 
 const CountryDetails = () => {
     const location = useParams();
 
-    const [details, setDetails] = useState([])
+    const [details, setDetails] = useState([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -28,18 +28,19 @@ const CountryDetails = () => {
     const countryDetails = details[0]
 
     const showDetails = (details) => {
-        //If details have not been loaded display a loading spiner
+        //check if the details are not undefined before showing the component
         if (details !== undefined) {
+            // assign the values to use inside the details card to variables
             const flag = details.flags.png
 
-            let lenguages = details.languages;
+            const lenguages = details.languages;
             let languagesList = []
             for (const [key, value] of Object.entries(lenguages)) {
                 languagesList.push(value)
             }
 
-            let currencies = details.currencies
-            let currencyList = []
+            const currencies = details.currencies;
+            let currencyList = [];
             for (const [key, value] of Object.entries(currencies)) {
                 currencyList.push(value)
             }
@@ -80,7 +81,8 @@ const CountryDetails = () => {
                                 Coordinates:&nbsp;
                             </span>
                             <span>
-                                lat:{details.latlng[0]}&deg;, long:{details.latlng[1]}&deg;
+                                lat:{details.latlng[0].toPrecision(2)}&deg;,
+                                long:{details.latlng[1].toPrecision(2)}&deg;
                             </span>
                         </div>
 
@@ -117,18 +119,13 @@ const CountryDetails = () => {
                 </div>
             )
         }
-        return (
-            <Loading />
-        )
     }
 
     return (
         <div>
-            {
-                showDetails(countryDetails)
-            }
+            {loading ? <Loading /> : showDetails(countryDetails)}
         </div>
     )
 }
 
-export default CountryDetails
+export default CountryDetails;

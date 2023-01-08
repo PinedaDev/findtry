@@ -7,7 +7,7 @@ import '../styles/routesStyle/home.css'
 
 const Home = () => {
 
-    const [countriesData, setCountryData] = useState([]);
+    const [countriesData, setCountriesData] = useState([]);
     const [, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage] = useState(5);
@@ -29,7 +29,7 @@ const Home = () => {
                 ) return 1;
                 return 0;
             })
-            setCountryData(sortedData);
+            setCountriesData(sortedData);
             setLoading(false);
         }
 
