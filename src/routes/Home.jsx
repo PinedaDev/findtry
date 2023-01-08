@@ -8,9 +8,9 @@ import '../styles/routesStyle/home.css'
 const Home = () => {
 
     const [countriesData, setCountryData] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [countriesPerPage, setcountriesPerPage] = useState(5);
+    const [countriesPerPage] = useState(5);
 
     const valueContext = useContext(searchValueContext)
     const searchContex = useContext(searchingContext)
@@ -36,12 +36,10 @@ const Home = () => {
         fetchCountriesData();
     }, [])
 
-
-
     //Get current post
     const indexOfLastCountryData = currentPage * countriesPerPage;
     const indexOfFirstCountryData = indexOfLastCountryData - countriesPerPage;
-    const currentCountriesData = countriesData.slice(indexOfFirstCountryData, indexOfLastCountryData)
+    const currentCountriesData = countriesData.slice(indexOfFirstCountryData, indexOfLastCountryData);
 
     const changePage = (event) => {
         const newPage = (event.selected % countriesData.length) + 1;

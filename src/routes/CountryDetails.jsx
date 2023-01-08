@@ -28,6 +28,7 @@ const CountryDetails = () => {
     const countryDetails = details[0]
 
     const showDetails = (details) => {
+        //If details have not been loaded display a loading spiner
         if (details !== undefined) {
             const flag = details.flags.png
 
@@ -65,7 +66,7 @@ const CountryDetails = () => {
                             <span className='head-text'>
                                 Show on the map:
                             </span>
-                            <a target="_blank" href={details.maps.googleMaps}>
+                            <a target="_blank" rel="noreferrer" href={details.maps.googleMaps}>
                                 <Icon
                                     path={mdiMapMarker}
                                     size={1}>
