@@ -1,6 +1,5 @@
-import React from 'react'
 import ReactPaginate from 'react-paginate';
-import './style/component.css'
+import './style/component.css';
 
 const Pagination = ({ countriesPerPage, totalCountries, handlePageClick }) => {
 
@@ -27,4 +26,4 @@ const Pagination = ({ countriesPerPage, totalCountries, handlePageClick }) => {
     )
 }
 
-export default Pagination
+export default Pagination;

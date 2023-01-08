@@ -1,9 +1,8 @@
-import React from 'react'
-import { mdiMapSearch } from '@mdi/js'
+import { mdiMapSearch } from '@mdi/js';
 import Icon from '@mdi/react';
 import { useEffect, useContext } from 'react';
 import { searchingContext, searchValueContext } from '../../hooks/SearchContext'
-import './style/component.css'
+import './style/component.css';
 
 const SearchField = () => {
 
@@ -41,4 +40,4 @@ const SearchField = () => {
     )
 }
 
-export default SearchField
+export default SearchField;

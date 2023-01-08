@@ -1,5 +1,4 @@
-import React from 'react'
-import './style/component.css'
+import './style/component.css';
 
 const Loading = () => {
     return (
@@ -14,4 +13,4 @@ const Loading = () => {
     )
 }
 
-export default Loading
+export default Loading;

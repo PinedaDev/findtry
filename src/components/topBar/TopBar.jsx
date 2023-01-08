@@ -1,15 +1,14 @@
-import React from 'react'
-import SearchField from '../searchField/SearchField'
-import Icon from '@mdi/react'
-import { mdiEarth } from '@mdi/js'
-import { mdiHome } from '@mdi/js'
-import { useLocation } from 'react-router'
-import { Link } from 'react-router-dom'
-import './style/component.css'
+import SearchField from '../searchField/SearchField';
+import Icon from '@mdi/react';
+import { mdiEarth } from '@mdi/js';
+import { mdiHome } from '@mdi/js';
+import { useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
+import './style/component.css';
 
 const TopBar = () => {
 
-    const location = useLocation()
+    const location = useLocation();
 
     return (
         <div className='top-bar'>
@@ -42,4 +41,4 @@ const TopBar = () => {
     )
 }
 
-export default TopBar
+export default TopBar;

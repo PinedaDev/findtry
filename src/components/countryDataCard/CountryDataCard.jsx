@@ -4,6 +4,7 @@ import Icon from '@mdi/react';
 import { mdiPlusCircle } from '@mdi/js';
 import './style/component.css';
 
+// data showed on the main section
 const CountryDataCard = ({ countryData }) => {
     const flag = countryData.flags.png;
     return (

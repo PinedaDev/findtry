@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import CountriesData from '../components/countriesData/CountriesData';
 import Pagination from '../components/pagination/Pagination';
 import { searchingContext, searchValueContext } from '../hooks/SearchContext';
-import '../styles/routesStyle/home.css'
+import '../styles/routesStyle/home.css';
 
 const Home = () => {
 

@@ -7,10 +7,10 @@ import './styles/main.css'
 const App = () => {
 
   const [searching, setSearching] = useState(false);
-  const provideSearchingContext = useMemo(() => ({ searching, setSearching }), [searching, setSearching])
+  const provideSearchingContext = useMemo(() => ({ searching, setSearching }), [searching, setSearching]);
 
   const [searchValue, setSearchValue] = useState("")
-  const privideSearchValueContext = useMemo(() => ({ searchValue, setSearchValue }), [searchValue, setSearchValue])
+  const privideSearchValueContext = useMemo(() => ({ searchValue, setSearchValue }), [searchValue, setSearchValue]);
 
   return (
     <searchingContext.Provider value={provideSearchingContext}>
