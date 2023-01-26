@@ -21,13 +21,15 @@ const Home = () => {
         const fetchCountriesData = async () => {
             setLoading(true);
             const res = await axios.get('https://restcountries.com/v3.1/all');
+
             let sortedData = res.data.sort((country1, country2) => {
                 if (country1.name.common.toLowerCase() < country2.name.common.toLowerCase()
                 ) return -1;
                 else {
                     return 1;
                 }
-            })
+            });
+
             setCountriesData(sortedData);
             setLoading(false);
         }
